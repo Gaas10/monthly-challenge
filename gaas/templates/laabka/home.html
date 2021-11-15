@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+ {% block css_files %}
+    
+    <link rel="stylesheet" href=" {% static "laabka/home.css"%}" >
+     
+    <link rel="stylesheet" href=" {% static "laabka/include/header.css"%}" >
+
+ {% endblock  %}
+
+
+ {% block page_title  %}{{title|title}} Challenges{% endblock  %}
+ 
+    
+
+{% block content %}
+
+  
+
+        {% include "laabka/partials/header.html"  %}
+
+
+        <h3>Hello Wolrd </h3>
+        <h4>{{ title|title}} Challenge</h4>
+            {% if muujin is not None%}
+                <h4>{{ muujin|title }}</h4>
+            {% else %}
+                <p class="diid">There is no Challenge in this month</p>
+            {% endif %}
+        <p class="awose">This is awoseme for me it is interesting</p>
+
+{% endblock  %}
+

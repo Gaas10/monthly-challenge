@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load static %}
+
+ {% block css_files %}
+    
+    <link rel="stylesheet" href=" {% static "laabka/main.css"%}" >
+    <link rel="stylesheet" href=" {% static "laabka/include/header.css"%}" >
+
+ {% endblock  %}
+
+  {% block page_title  %}All Challenges{% endblock  %}
+
+    
+ 
+ {% block content%}
+
+      {% include "laabka/partials/header.html"  %}
+
+    <ul>
+      {% for bil in bilaha %}
+      <!-- <li><a href="/Gaas/{{bil}}">{{bil|title}}</a></li> -->
+
+       <li><a href="{% url "saxaha" bil %}">{{bil|title}}</a></li>
+
+      {% endfor %}
+
+    </ul>
+
+    {%endblock%}
